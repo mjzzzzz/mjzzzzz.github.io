@@ -1,7 +1,20 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Categories - Category - 路人贾的分享小站</title>
-        <link>http://localhost:1313/categories/</link>
-        <description>Categories - Category - 路人贾的分享小站</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><atom:link href="http://localhost:1313/categories/" rel="self" type="application/rss+xml" /></channel>
+        <title>Categories on 路人贾的分享小站</title>
+        <link>https://example.com/categories/</link>
+        <description>Recent content in Categories on 路人贾的分享小站</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <copyright>路人贾&lt;jiamin1129@gmail.com&gt; All rights reserved.</copyright>
+        <lastBuildDate>Sat, 11 Nov 2023 11:25:12 +0800</lastBuildDate><atom:link href="https://example.com/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>程序开发</title>
+        <link>https://example.com/categories/%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/</link>
+        <pubDate>Sat, 11 Nov 2023 11:25:12 +0800</pubDate>
+        
+        <guid>https://example.com/categories/%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/</guid>
+        <description>&lt;img src="https://example.com/categories/%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/code.jpg" alt="Featured image of post 程序开发" /&gt;</description>
+        </item>
+        
+    </channel>
 </rss>

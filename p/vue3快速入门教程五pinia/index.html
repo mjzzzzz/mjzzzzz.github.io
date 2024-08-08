@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="准备一个效果 搭建 pinia 环境 第一步：npm install pinia 第二步：操作src/main.ts 1 2 3 4 5 6 7 8 9 10 11 12 13 import { createApp } from &#39;vue&#39; import App from &#39;./App.vue&#39; /* 引入createPinia，用于创建pinia */ import { createPinia } from &#39;pinia&#39; /* 创建pinia */ const pinia = createPinia() const app = createApp(App) /* 使用插件 */{} app.use(pinia) app.mount(&#39;#app&#39;) 此时开发者工具中已经有了pinia选项 存储+读取数据 Store是一个保存：状态、业务逻辑 的实体，每个组件都可以读取、写入它。 它有三个概念：state、getter、action，相当于组件中的： data、 computed 和 methods。 具体编码：src/store/count.ts 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 // 引入defineStore用于创建store import {defineStore} from &#39;pinia&#39; // 定义并暴露一个store export const useCountStore = defineStore(&#39;count&#39;,{ // 动作 actions:{}, // 状态 state(){ return { sum:6 } }, // 计算 getters:{} }) 具体编码：src/store/talk.">
+<title>Vue3快速入门教程：五、Pinia</title>
+
+<link rel='canonical' href='https://example.com/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%BA%94pinia/'>
+
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Vue3快速入门教程：五、Pinia">
+<meta property='og:description' content="准备一个效果 搭建 pinia 环境 第一步：npm install pinia 第二步：操作src/main.ts 1 2 3 4 5 6 7 8 9 10 11 12 13 import { createApp } from &#39;vue&#39; import App from &#39;./App.vue&#39; /* 引入createPinia，用于创建pinia */ import { createPinia } from &#39;pinia&#39; /* 创建pinia */ const pinia = createPinia() const app = createApp(App) /* 使用插件 */{} app.use(pinia) app.mount(&#39;#app&#39;) 此时开发者工具中已经有了pinia选项 存储+读取数据 Store是一个保存：状态、业务逻辑 的实体，每个组件都可以读取、写入它。 它有三个概念：state、getter、action，相当于组件中的： data、 computed 和 methods。 具体编码：src/store/count.ts 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 // 引入defineStore用于创建store import {defineStore} from &#39;pinia&#39; // 定义并暴露一个store export const useCountStore = defineStore(&#39;count&#39;,{ // 动作 actions:{}, // 状态 state(){ return { sum:6 } }, // 计算 getters:{} }) 具体编码：src/store/talk.">
+<meta property='og:url' content='https://example.com/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%BA%94pinia/'>
+<meta property='og:site_name' content='路人贾的分享小站'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='前端技术' /><meta property='article:tag' content='Vue3' /><meta property='article:published_time' content='2023-10-23T11:25:12&#43;08:00'/><meta property='article:modified_time' content='2023-10-23T11:25:12&#43;08:00'/><meta property='og:image' content='https://example.com/images/vue3.png' />
+<meta name="twitter:title" content="Vue3快速入门教程：五、Pinia">
+<meta name="twitter:description" content="准备一个效果 搭建 pinia 环境 第一步：npm install pinia 第二步：操作src/main.ts 1 2 3 4 5 6 7 8 9 10 11 12 13 import { createApp } from &#39;vue&#39; import App from &#39;./App.vue&#39; /* 引入createPinia，用于创建pinia */ import { createPinia } from &#39;pinia&#39; /* 创建pinia */ const pinia = createPinia() const app = createApp(App) /* 使用插件 */{} app.use(pinia) app.mount(&#39;#app&#39;) 此时开发者工具中已经有了pinia选项 存储+读取数据 Store是一个保存：状态、业务逻辑 的实体，每个组件都可以读取、写入它。 它有三个概念：state、getter、action，相当于组件中的： data、 computed 和 methods。 具体编码：src/store/count.ts 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 // 引入defineStore用于创建store import {defineStore} from &#39;pinia&#39; // 定义并暴露一个store export const useCountStore = defineStore(&#39;count&#39;,{ // 动作 actions:{}, // 状态 state(){ return { sum:6 } }, // 计算 getters:{} }) 具体编码：src/store/talk."><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://example.com/images/vue3.png' />
+  
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/avatar_hu8edcb32790c82791ca909a910c3b3c28_102396_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">😊</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">路人贾的分享小站</a></h1>
+            <h2 class="site-description">分享各种各样有用的知识，期待与大家共同学习，共同进步。</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/mjzzzzz'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>文章</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#准备一个效果">准备一个效果</a></li>
+    <li><a href="#搭建-pinia-环境">搭建 pinia 环境</a></li>
+    <li><a href="#存储读取数据">存储+读取数据</a></li>
+    <li><a href="#修改数据的三种方式">修改数据的三种方式</a></li>
+    <li><a href="#storetorefs">storeToRefs</a></li>
+    <li><a href="#getters">getters</a></li>
+    <li><a href="#subscribe">$subscribe</a></li>
+    <li><a href="#store组合式写法">store组合式写法</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%BA%94pinia/">
+                
+                    <img src="/images/vue3.png" loading="lazy" alt="Featured image of post Vue3快速入门教程：五、Pinia" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/" style="background-color: #2a9d8f; color: #fff;">
+                程序开发
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%BA%94pinia/">Vue3快速入门教程：五、Pinia</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2023-10-23</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 3 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="heading">
+</h1><h2 id="准备一个效果">准备一个效果
+</h2><img src="pinia_example.gif" alt="" style="zoom:30%;border:1px solid black; border-radius:10px" /> 
+<h2 id="搭建-pinia-环境">搭建 pinia 环境
+</h2><p>第一步：<code>npm install pinia</code></p>
+<p>第二步：操作<code>src/main.ts</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">createApp</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;vue&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">App</span> <span class="kr">from</span> <span class="s1">&#39;./App.vue&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/* 引入createPinia，用于创建pinia */</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">createPinia</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;pinia&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/* 创建pinia */</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">pinia</span> <span class="o">=</span> <span class="nx">createPinia</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">createApp</span><span class="p">(</span><span class="nx">App</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/* 使用插件 */</span><span class="p">{}</span>
+</span></span><span class="line"><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">pinia</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">mount</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>此时开发者工具中已经有了<code>pinia</code>选项</p>
+<img src="pinia-extends.png" style="zoom:80%;border:1px solid black; border-radius:10px" />
+<h2 id="存储读取数据">存储+读取数据
+</h2><p><code>Store</code>是一个保存：<strong>状态</strong>、<strong>业务逻辑</strong> 的实体，每个组件都可以<strong>读取</strong>、<strong>写入</strong>它。</p>
+<p>它有三个概念：<code>state</code>、<code>getter</code>、<code>action</code>，相当于组件中的： <code>data</code>、 <code>computed</code> 和 <code>methods</code>。</p>
+<p>具体编码：<code>src/store/count.ts</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// 引入defineStore用于创建store
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="p">{</span><span class="nx">defineStore</span><span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;pinia&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 定义并暴露一个store
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="kr">const</span> <span class="nx">useCountStore</span> <span class="o">=</span> <span class="nx">defineStore</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">,{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// 动作
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">actions</span><span class="o">:</span><span class="p">{},</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// 状态
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">state</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">sum</span>:<span class="kt">6</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// 计算
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">getters</span><span class="o">:</span><span class="p">{}</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>具体编码：<code>src/store/talk.ts</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// 引入defineStore用于创建store
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="p">{</span><span class="nx">defineStore</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;pinia&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 定义并暴露一个store
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="kr">const</span> <span class="nx">useTalkStore</span> <span class="o">=</span> <span class="nx">defineStore</span><span class="p">(</span><span class="s1">&#39;talk&#39;</span><span class="p">,{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// 动作
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">actions</span><span class="o">:</span><span class="p">{},</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// 状态
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">state</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">talkList</span><span class="o">:</span><span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span><span class="nx">id</span><span class="o">:</span><span class="s1">&#39;yuysada01&#39;</span><span class="p">,</span><span class="nx">content</span><span class="o">:</span><span class="s1">&#39;你今天有点怪，哪里怪？怪好看的！&#39;</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">     		<span class="p">{</span><span class="nx">id</span><span class="o">:</span><span class="s1">&#39;yuysada02&#39;</span><span class="p">,</span><span class="nx">content</span><span class="o">:</span><span class="s1">&#39;草莓、蓝莓、蔓越莓，你想我了没？&#39;</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span><span class="nx">id</span><span class="o">:</span><span class="s1">&#39;yuysada03&#39;</span><span class="p">,</span><span class="nx">content</span><span class="o">:</span><span class="s1">&#39;心里给你留了一块地，我的死心塌地&#39;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// 计算
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">getters</span><span class="o">:</span><span class="p">{}</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>组件中使用<code>state</code>中的数据</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-vue" data-lang="vue"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="nx">当前求和为</span><span class="err">：</span><span class="p">{{</span> <span class="nx">sumStore</span><span class="p">.</span><span class="nx">sum</span> <span class="p">}}&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">setup</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;ts&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;Count&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// 引入对应的useXxxxxStore	
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">import</span> <span class="p">{</span><span class="nx">useSumStore</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@/store/sum&#39;</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c1">// 调用useXxxxxStore得到对应的store
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">const</span> <span class="nx">sumStore</span> <span class="o">=</span> <span class="nx">useSumStore</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-vue" data-lang="vue"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">li</span> <span class="nt">v-for</span><span class="o">=</span><span class="s">&#34;talk in talkStore.talkList&#34; :key=&#34;talk.id&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{{</span> <span class="na">talk.content</span> <span class="p">}}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">setup</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;ts&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;Count&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">import</span> <span class="nx">axios</span> <span class="nx">from</span> <span class="s1">&#39;axios&#39;</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">import</span> <span class="p">{</span><span class="nx">useTalkStore</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@/store/talk&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">talkStore</span> <span class="o">=</span> <span class="nx">useTalkStore</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="修改数据的三种方式">修改数据的三种方式
+</h2><p>第一种修改方式：直接修改</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="nx">countStore</span><span class="p">.</span><span class="nx">sum</span> <span class="o">=</span> <span class="mi">666</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>第二种修改方式：批量修改</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="nx">countStore</span><span class="p">.</span><span class="nx">$patch</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">sum</span>:<span class="kt">999</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">school</span><span class="o">:</span><span class="s1">&#39;atguigu&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>第三种修改方式：借助<code>action</code>修改（<code>action</code>中可以编写一些业务逻辑）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">defineStore</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;pinia&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">useCountStore</span> <span class="o">=</span> <span class="nx">defineStore</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="cm">/*************/</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">actions</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//加
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">increment</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="nx">number</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sum</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//操作countStore中的sum
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">this</span><span class="p">.</span><span class="nx">sum</span> <span class="o">+=</span> <span class="nx">value</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//减
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">decrement</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="nx">number</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sum</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="nx">sum</span> <span class="o">-=</span> <span class="nx">value</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="cm">/*************/</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>组件中调用<code>action</code>即可</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// 使用countStore
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">countStore</span> <span class="o">=</span> <span class="nx">useCountStore</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 调用对应action
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">countStore</span><span class="p">.</span><span class="nx">incrementOdd</span><span class="p">(</span><span class="nx">n</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="storetorefs">storeToRefs
+</h2><p>借助<code>storeToRefs</code>将<code>store</code>中的数据转为<code>ref</code>对象，方便在模板中使用。</p>
+<p>注意：<code>pinia</code>提供的<code>storeToRefs</code>只会将数据做转换，而<code>Vue</code>的<code>toRefs</code>会转换<code>store</code>中数据。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-vue" data-lang="vue"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;count&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="nx">当前求和为</span><span class="err">：</span><span class="p">{{</span><span class="nx">sum</span><span class="p">}}&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">setup</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;ts&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;Count&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">import</span> <span class="p">{</span> <span class="nx">useCountStore</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@/store/count&#39;</span>
+</span></span><span class="line"><span class="cl">  <span class="cm">/* 引入storeToRefs */</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">import</span> <span class="p">{</span> <span class="nx">storeToRefs</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;pinia&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="cm">/* 得到countStore */</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">countStore</span> <span class="o">=</span> <span class="nx">useCountStore</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="cm">/* 使用storeToRefs转换countStore，随后解构 */</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">{</span><span class="nx">sum</span><span class="p">}</span> <span class="o">=</span> <span class="nx">storeToRefs</span><span class="p">(</span><span class="nx">countStore</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="getters">getters
+</h2><p>概念：当<code>state</code>中的数据，需要经过处理后再使用时，可以使用<code>getters</code>配置。</p>
+<p>追加<code>getters</code>配置。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// 引入defineStore用于创建store
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="p">{</span><span class="nx">defineStore</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;pinia&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 定义并暴露一个store
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="kr">const</span> <span class="nx">useCountStore</span> <span class="o">=</span> <span class="nx">defineStore</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">,{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// 动作
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">actions</span><span class="o">:</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/************/</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// 状态
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">state</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">sum</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">school</span><span class="o">:</span><span class="s1">&#39;atguigu&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// 计算
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">getters</span><span class="o">:</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">bigSum</span><span class="o">:</span><span class="p">(</span><span class="nx">state</span><span class="p">)</span><span class="o">:</span><span class="nx">number</span> <span class="p">=&gt;</span> <span class="nx">state</span><span class="p">.</span><span class="nx">sum</span> <span class="o">*</span><span class="mi">10</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">upperSchool</span><span class="p">()</span><span class="o">:</span><span class="nx">string</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="k">this</span><span class="p">.</span> <span class="nx">school</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>组件中读取数据：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="p">{</span><span class="nx">increment</span><span class="p">,</span><span class="nx">decrement</span><span class="p">}</span> <span class="o">=</span> <span class="nx">countStore</span>
+</span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="p">{</span><span class="nx">sum</span><span class="p">,</span><span class="nx">school</span><span class="p">,</span><span class="nx">bigSum</span><span class="p">,</span><span class="nx">upperSchool</span><span class="p">}</span> <span class="o">=</span> <span class="nx">storeToRefs</span><span class="p">(</span><span class="nx">countStore</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="subscribe">$subscribe
+</h2><p>通过 store 的 <code>$subscribe()</code> 方法侦听 <code>state</code> 及其变化</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="nx">talkStore</span><span class="p">.</span><span class="nx">$subscribe</span><span class="p">((</span><span class="nx">mutate</span><span class="p">,</span><span class="nx">state</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;LoveTalk&#39;</span><span class="p">,</span><span class="nx">mutate</span><span class="p">,</span><span class="nx">state</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">&#39;talk&#39;</span><span class="p">,</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">talkList</span><span class="p">.</span><span class="nx">value</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="store组合式写法">store组合式写法
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span><span class="nx">defineStore</span><span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;pinia&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">axios</span> <span class="kr">from</span> <span class="s1">&#39;axios&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span><span class="nx">nanoid</span><span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;nanoid&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span><span class="nx">reactive</span><span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;vue&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">useTalkStore</span> <span class="o">=</span> <span class="nx">defineStore</span><span class="p">(</span><span class="s1">&#39;talk&#39;</span><span class="p">,()</span><span class="o">=&gt;</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// talkList就是state
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">const</span> <span class="nx">talkList</span> <span class="o">=</span> <span class="nx">reactive</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;talkList&#39;</span><span class="p">)</span> <span class="kr">as</span> <span class="kt">string</span><span class="p">)</span> <span class="o">||</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// getATalk函数相当于action
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">async</span> <span class="kd">function</span> <span class="nx">getATalk</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 发请求，下面这行的写法是：连续解构赋值+重命名
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kd">let</span> <span class="p">{</span><span class="nx">data</span><span class="o">:</span><span class="p">{</span><span class="nx">content</span>:<span class="kt">title</span><span class="p">}}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="kr">get</span><span class="p">(</span><span class="s1">&#39;https://api.uomg.com/api/rand.qinghua?format=json&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 把请求回来的字符串，包装成一个对象
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span><span class="nx">id</span>:<span class="kt">nanoid</span><span class="p">(),</span><span class="nx">title</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 放到数组中
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">talkList</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">{</span><span class="nx">talkList</span><span class="p">,</span><span class="nx">getATalk</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/">前端技术</a>
+        
+            <a href="/tags/vue3/">Vue3</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E5%85%AB%E6%96%B0%E7%BB%84%E4%BB%B6/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/images/vue3.png" loading="lazy" data-key="" data-hash="/images/vue3.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Vue3快速入门教程：八、新组件</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%B8%83%E5%85%B6%E4%BB%96api/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/images/vue3.png" loading="lazy" data-key="" data-hash="/images/vue3.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Vue3快速入门教程：七、其他API</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E5%85%AD%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/images/vue3.png" loading="lazy" data-key="" data-hash="/images/vue3.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Vue3快速入门教程：六、组件通信</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E5%9B%9B%E8%B7%AF%E7%94%B1/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/images/vue3.png" loading="lazy" data-key="" data-hash="/images/vue3.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Vue3快速入门教程：四、路由</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%B8%89vue3%E6%A0%B8%E5%BF%83%E8%AF%AD%E6%B3%95/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/images/vue3.png" loading="lazy" data-key="" data-hash="/images/vue3.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Vue3快速入门教程：三、Vue3核心语法</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2023 - 
+        
+        2024 路人贾&lt;jiamin1129@gmail.com&gt; All rights reserved.
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

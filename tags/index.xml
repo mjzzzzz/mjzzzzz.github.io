@@ -1,7 +1,28 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Tags - Tag - 路人贾的分享小站</title>
-        <link>http://localhost:1313/tags/</link>
-        <description>Tags - Tag - 路人贾的分享小站</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><atom:link href="http://localhost:1313/tags/" rel="self" type="application/rss+xml" /></channel>
+        <title>Tags on 路人贾的分享小站</title>
+        <link>https://example.com/tags/</link>
+        <description>Recent content in Tags on 路人贾的分享小站</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <copyright>路人贾&lt;jiamin1129@gmail.com&gt; All rights reserved.</copyright>
+        <lastBuildDate>Sat, 11 Nov 2023 11:25:12 +0800</lastBuildDate><atom:link href="https://example.com/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Vue3</title>
+        <link>https://example.com/tags/vue3/</link>
+        <pubDate>Sat, 11 Nov 2023 11:25:12 +0800</pubDate>
+        
+        <guid>https://example.com/tags/vue3/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>前端技术</title>
+        <link>https://example.com/tags/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/</link>
+        <pubDate>Sat, 11 Nov 2023 11:25:12 +0800</pubDate>
+        
+        <guid>https://example.com/tags/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
 </rss>
