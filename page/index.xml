@@ -2,34 +2,58 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Pages on 路人贾的分享小站</title>
-        <link>https://example.com/page/</link>
+        <link>http://localhost:1313/page/</link>
         <description>Recent content in Pages on 路人贾的分享小站</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>路人贾&lt;jiamin1129@gmail.com&gt; All rights reserved.</copyright>
-        <lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 03 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/page/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>关于</title>
-        <link>https://example.com/about/</link>
-        <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+        <link>http://localhost:1313/about/</link>
+        <pubDate>Tue, 03 Oct 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://example.com/about/</guid>
-        <description>&lt;p&gt;This is a test page for i18n support.&lt;/p&gt;
+        <guid>http://localhost:1313/about/</guid>
+        <description>&lt;h2 id=&#34;欢迎&#34;&gt;欢迎
+&lt;/h2&gt;&lt;p&gt;欢迎您访问我的网站。&lt;/p&gt;
+&lt;p&gt;我是路人贾，从事多年计算机行业，做过Java开发，写过Python代码，也浅学过前端，更多的时候从事的是数据仓库和大数据相关的工作。&lt;/p&gt;
+&lt;h2 id=&#34;建站初衷&#34;&gt;建站初衷
+&lt;/h2&gt;&lt;p&gt;此站会分享各种各样的知识，无论是我个人原创，还是在网上发现的有价值或者有意思的文章，都会发布或转载在这里。&lt;/p&gt;
+&lt;p&gt;希望您在这里能学习到知识，找到快乐，也可以与其他朋友在评论区交流想法和心得。&lt;/p&gt;
+&lt;p&gt;期待与您共同学习，共同进步。&lt;/p&gt;
+&lt;h2 id=&#34;联系我&#34;&gt;联系我
+&lt;/h2&gt;&lt;p&gt;如果您对我的网站有什么意见或建议，可以发邮件给我。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我的Email地址&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;mailto:jiamin1129@gmail.com&#34; &gt;jiamin1129@gmail.com&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;写在最后&#34;&gt;写在最后
+&lt;/h2&gt;&lt;p&gt;如果您觉得此站对您有用，请将此站添加到浏览器收藏夹，也可以将此站推荐给您的朋友们。&lt;/p&gt;
+&lt;p&gt;感谢您的访问！&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>文章</title>
-        <link>https://example.com/archives/</link>
+        <link>http://localhost:1313/archives/</link>
         <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://example.com/archives/</guid>
+        <guid>http://localhost:1313/archives/</guid>
         <description></description>
         </item>
         <item>
-        <title>搜索</title>
-        <link>https://example.com/search/</link>
+        <title>社交</title>
+        <link>http://localhost:1313/%E7%A4%BE%E4%BA%A4/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://example.com/search/</guid>
+        <guid>http://localhost:1313/%E7%A4%BE%E4%BA%A4/</guid>
+        <description>&lt;p&gt;欢迎访问我的社交平台&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>搜索</title>
+        <link>http://localhost:1313/search/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/search/</guid>
         <description></description>
         </item>
         
