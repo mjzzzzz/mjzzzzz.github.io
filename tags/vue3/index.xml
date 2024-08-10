@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Vue3 on 路人贾的分享小站</title>
-        <link>http://localhost:1313/tags/vue3/</link>
+        <link>https://jiamin.site/tags/vue3/</link>
         <description>Recent content in Vue3 on 路人贾的分享小站</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>路人贾&lt;jiamin1129@gmail.com&gt; All rights reserved.</copyright>
-        <lastBuildDate>Sat, 11 Nov 2023 11:25:12 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/vue3/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 11 Nov 2023 11:25:12 +0800</lastBuildDate><atom:link href="https://jiamin.site/tags/vue3/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Vue3快速入门教程：八、新组件</title>
-        <link>http://localhost:1313/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E5%85%AB%E6%96%B0%E7%BB%84%E4%BB%B6/</link>
+        <link>https://jiamin.site/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E5%85%AB%E6%96%B0%E7%BB%84%E4%BB%B6/</link>
         <pubDate>Sat, 11 Nov 2023 11:25:12 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E5%85%AB%E6%96%B0%E7%BB%84%E4%BB%B6/</guid>
-        <description>&lt;img src="http://localhost:1313/images/vue3.png" alt="Featured image of post Vue3快速入门教程：八、新组件" /&gt;&lt;h2 id=&#34;teleport&#34;&gt;Teleport
+        <guid>https://jiamin.site/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E5%85%AB%E6%96%B0%E7%BB%84%E4%BB%B6/</guid>
+        <description>&lt;img src="https://jiamin.site/images/vue3.png" alt="Featured image of post Vue3快速入门教程：八、新组件" /&gt;&lt;h2 id=&#34;teleport&#34;&gt;Teleport
 &lt;/h2&gt;&lt;p&gt;什么是Teleport？—— Teleport 是一种能够将我们的&lt;strong&gt;组件html结构&lt;/strong&gt;移动到指定位置的技术。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -123,11 +123,11 @@
         </item>
         <item>
         <title>Vue3快速入门教程：七、其他API</title>
-        <link>http://localhost:1313/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%B8%83%E5%85%B6%E4%BB%96api/</link>
+        <link>https://jiamin.site/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%B8%83%E5%85%B6%E4%BB%96api/</link>
         <pubDate>Sun, 05 Nov 2023 11:25:12 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%B8%83%E5%85%B6%E4%BB%96api/</guid>
-        <description>&lt;img src="http://localhost:1313/images/vue3.png" alt="Featured image of post Vue3快速入门教程：七、其他API" /&gt;&lt;h2 id=&#34;shallowref-与-shallowreactive&#34;&gt;shallowRef 与 shallowReactive
+        <guid>https://jiamin.site/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%B8%83%E5%85%B6%E4%BB%96api/</guid>
+        <description>&lt;img src="https://jiamin.site/images/vue3.png" alt="Featured image of post Vue3快速入门教程：七、其他API" /&gt;&lt;h2 id=&#34;shallowref-与-shallowreactive&#34;&gt;shallowRef 与 shallowReactive
 &lt;/h2&gt;&lt;h3 id=&#34;shallowref&#34;&gt;&lt;code&gt;shallowRef&lt;/code&gt;
 &lt;/h3&gt;&lt;p&gt;作用：创建一个响应式数据，但只对顶层属性进行响应式处理。&lt;/p&gt;
 &lt;p&gt;用法：&lt;/p&gt;
@@ -394,11 +394,11 @@
         </item>
         <item>
         <title>Vue3快速入门教程：六、组件通信</title>
-        <link>http://localhost:1313/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E5%85%AD%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/</link>
+        <link>https://jiamin.site/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E5%85%AD%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/</link>
         <pubDate>Sun, 29 Oct 2023 11:25:12 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E5%85%AD%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/</guid>
-        <description>&lt;img src="http://localhost:1313/images/vue3.png" alt="Featured image of post Vue3快速入门教程：六、组件通信" /&gt;&lt;p&gt;&lt;strong&gt;&lt;code&gt;Vue3&lt;/code&gt;组件通信和&lt;code&gt;Vue2&lt;/code&gt;的区别：&lt;/strong&gt;&lt;/p&gt;
+        <guid>https://jiamin.site/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E5%85%AD%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/</guid>
+        <description>&lt;img src="https://jiamin.site/images/vue3.png" alt="Featured image of post Vue3快速入门教程：六、组件通信" /&gt;&lt;p&gt;&lt;strong&gt;&lt;code&gt;Vue3&lt;/code&gt;组件通信和&lt;code&gt;Vue2&lt;/code&gt;的区别：&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;移除事件总线，使用&lt;code&gt;mitt&lt;/code&gt;代替。&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;vuex&lt;/code&gt;换成了&lt;code&gt;pinia&lt;/code&gt;。&lt;/li&gt;
@@ -1079,10 +1079,10 @@
 &lt;/h2&gt;&lt;p&gt;参考之前&lt;code&gt;pinia&lt;/code&gt;部分的讲解&lt;/p&gt;
 &lt;h2 id=&#34;slot&#34;&gt;slot
 &lt;/h2&gt;&lt;h3 id=&#34;默认插槽&#34;&gt;默认插槽
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E5%85%AD%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/default_slot.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://jiamin.site/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E5%85%AD%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/default_slot.png&#34;
 	width=&#34;1248&#34;
 	height=&#34;306&#34;
-	srcset=&#34;http://localhost:1313/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E5%85%AD%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/default_slot_hu4ca2ca020933db083e887933ab66fbd5_219955_480x0_resize_box_3.png 480w, http://localhost:1313/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E5%85%AD%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/default_slot_hu4ca2ca020933db083e887933ab66fbd5_219955_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;https://jiamin.site/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E5%85%AD%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/default_slot_hu4ca2ca020933db083e887933ab66fbd5_219955_480x0_resize_box_3.png 480w, https://jiamin.site/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E5%85%AD%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/default_slot_hu4ca2ca020933db083e887933ab66fbd5_219955_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;默认插槽&#34;
@@ -1247,11 +1247,11 @@
         </item>
         <item>
         <title>Vue3快速入门教程：五、Pinia</title>
-        <link>http://localhost:1313/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%BA%94pinia/</link>
+        <link>https://jiamin.site/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%BA%94pinia/</link>
         <pubDate>Mon, 23 Oct 2023 11:25:12 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%BA%94pinia/</guid>
-        <description>&lt;img src="http://localhost:1313/images/vue3.png" alt="Featured image of post Vue3快速入门教程：五、Pinia" /&gt;&lt;h1 id=&#34;heading&#34;&gt;
+        <guid>https://jiamin.site/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%BA%94pinia/</guid>
+        <description>&lt;img src="https://jiamin.site/images/vue3.png" alt="Featured image of post Vue3快速入门教程：五、Pinia" /&gt;&lt;h1 id=&#34;heading&#34;&gt;
 &lt;/h1&gt;&lt;h2 id=&#34;准备一个效果&#34;&gt;准备一个效果
 &lt;/h2&gt;&lt;img src=&#34;pinia_example.gif&#34; alt=&#34;&#34; style=&#34;zoom:30%;border:1px solid black; border-radius:10px&#34; /&gt; 
 &lt;h2 id=&#34;搭建-pinia-环境&#34;&gt;搭建 pinia 环境
@@ -1715,11 +1715,11 @@
         </item>
         <item>
         <title>Vue3快速入门教程：四、路由</title>
-        <link>http://localhost:1313/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E5%9B%9B%E8%B7%AF%E7%94%B1/</link>
+        <link>https://jiamin.site/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E5%9B%9B%E8%B7%AF%E7%94%B1/</link>
         <pubDate>Fri, 20 Oct 2023 11:25:12 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E5%9B%9B%E8%B7%AF%E7%94%B1/</guid>
-        <description>&lt;img src="http://localhost:1313/images/vue3.png" alt="Featured image of post Vue3快速入门教程：四、路由" /&gt;&lt;h2 id=&#34;对路由的理解&#34;&gt;对路由的理解
+        <guid>https://jiamin.site/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E5%9B%9B%E8%B7%AF%E7%94%B1/</guid>
+        <description>&lt;img src="https://jiamin.site/images/vue3.png" alt="Featured image of post Vue3快速入门教程：四、路由" /&gt;&lt;h2 id=&#34;对路由的理解&#34;&gt;对路由的理解
 &lt;/h2&gt;&lt;img src=&#34;image-20231018144351536.png&#34; alt=&#34;image-20231018144351536&#34; style=&#34;zoom:20%;border-radius:40px&#34; /&gt; 
 &lt;h2 id=&#34;基本切换效果&#34;&gt;基本切换效果
 &lt;/h2&gt;&lt;ul&gt;
@@ -2344,11 +2344,11 @@
         </item>
         <item>
         <title>Vue3快速入门教程：三、Vue3核心语法</title>
-        <link>http://localhost:1313/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%B8%89vue3%E6%A0%B8%E5%BF%83%E8%AF%AD%E6%B3%95/</link>
+        <link>https://jiamin.site/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%B8%89vue3%E6%A0%B8%E5%BF%83%E8%AF%AD%E6%B3%95/</link>
         <pubDate>Sat, 14 Oct 2023 11:25:12 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%B8%89vue3%E6%A0%B8%E5%BF%83%E8%AF%AD%E6%B3%95/</guid>
-        <description>&lt;img src="http://localhost:1313/images/vue3.png" alt="Featured image of post Vue3快速入门教程：三、Vue3核心语法" /&gt;&lt;h2 id=&#34;optionsapi-与-compositionapi&#34;&gt;OptionsAPI 与 CompositionAPI
+        <guid>https://jiamin.site/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%B8%89vue3%E6%A0%B8%E5%BF%83%E8%AF%AD%E6%B3%95/</guid>
+        <description>&lt;img src="https://jiamin.site/images/vue3.png" alt="Featured image of post Vue3快速入门教程：三、Vue3核心语法" /&gt;&lt;h2 id=&#34;optionsapi-与-compositionapi&#34;&gt;OptionsAPI 与 CompositionAPI
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;Vue2&lt;/code&gt;的&lt;code&gt;API&lt;/code&gt;设计是&lt;code&gt;Options&lt;/code&gt;（配置）风格的，即&lt;code&gt;选项式API&lt;/code&gt;。&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;Vue3&lt;/code&gt;的&lt;code&gt;API&lt;/code&gt;设计是&lt;code&gt;Composition&lt;/code&gt;（组合）风格的，即&lt;code&gt;组合式式API&lt;/code&gt;。&lt;/li&gt;
@@ -4278,11 +4278,11 @@
         </item>
         <item>
         <title>Vue3快速入门教程：二、创建新工程</title>
-        <link>http://localhost:1313/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%BA%8C%E5%88%9B%E5%BB%BA%E6%96%B0%E5%B7%A5%E7%A8%8B/</link>
+        <link>https://jiamin.site/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%BA%8C%E5%88%9B%E5%BB%BA%E6%96%B0%E5%B7%A5%E7%A8%8B/</link>
         <pubDate>Tue, 10 Oct 2023 11:25:12 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%BA%8C%E5%88%9B%E5%BB%BA%E6%96%B0%E5%B7%A5%E7%A8%8B/</guid>
-        <description>&lt;img src="http://localhost:1313/images/vue3.png" alt="Featured image of post Vue3快速入门教程：二、创建新工程" /&gt;&lt;h2 id=&#34;基于-vue-cli-创建&#34;&gt;基于 vue-cli 创建
+        <guid>https://jiamin.site/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%BA%8C%E5%88%9B%E5%BB%BA%E6%96%B0%E5%B7%A5%E7%A8%8B/</guid>
+        <description>&lt;img src="https://jiamin.site/images/vue3.png" alt="Featured image of post Vue3快速入门教程：二、创建新工程" /&gt;&lt;h2 id=&#34;基于-vue-cli-创建&#34;&gt;基于 vue-cli 创建
 &lt;/h2&gt;&lt;p&gt;点击查看&lt;a class=&#34;link&#34; href=&#34;https://cli.vuejs.org/zh/guide/creating-a-project.html#vue-create&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;官方文档&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote&gt;
@@ -4336,10 +4336,10 @@
 &lt;li&gt;对 &lt;code&gt;TypeScript&lt;/code&gt;、&lt;code&gt;JSX&lt;/code&gt;、&lt;code&gt;CSS&lt;/code&gt; 等支持开箱即用。&lt;/li&gt;
 &lt;li&gt;真正的按需编译，不再等待整个应用编译完成。&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;webpack&lt;/code&gt;构建 与 &lt;code&gt;vite&lt;/code&gt;构建对比图如下：
-&lt;img src=&#34;http://localhost:1313/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%BA%8C%E5%88%9B%E5%BB%BA%E6%96%B0%E5%B7%A5%E7%A8%8B/webpack.png&#34;
+&lt;img src=&#34;https://jiamin.site/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%BA%8C%E5%88%9B%E5%BB%BA%E6%96%B0%E5%B7%A5%E7%A8%8B/webpack.png&#34;
 	width=&#34;1798&#34;
 	height=&#34;1003&#34;
-	srcset=&#34;http://localhost:1313/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%BA%8C%E5%88%9B%E5%BB%BA%E6%96%B0%E5%B7%A5%E7%A8%8B/webpack_huf09c4fed1143c539dc6ce061713ce08c_90345_480x0_resize_box_3.png 480w, http://localhost:1313/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%BA%8C%E5%88%9B%E5%BB%BA%E6%96%B0%E5%B7%A5%E7%A8%8B/webpack_huf09c4fed1143c539dc6ce061713ce08c_90345_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;https://jiamin.site/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%BA%8C%E5%88%9B%E5%BB%BA%E6%96%B0%E5%B7%A5%E7%A8%8B/webpack_huf09c4fed1143c539dc6ce061713ce08c_90345_480x0_resize_box_3.png 480w, https://jiamin.site/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%BA%8C%E5%88%9B%E5%BB%BA%E6%96%B0%E5%B7%A5%E7%A8%8B/webpack_huf09c4fed1143c539dc6ce061713ce08c_90345_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;webpack构建&#34;
@@ -4350,10 +4350,10 @@
 		data-flex-basis=&#34;430px&#34;
 	
 &gt;
-&lt;img src=&#34;http://localhost:1313/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%BA%8C%E5%88%9B%E5%BB%BA%E6%96%B0%E5%B7%A5%E7%A8%8B/vite.png&#34;
+&lt;img src=&#34;https://jiamin.site/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%BA%8C%E5%88%9B%E5%BB%BA%E6%96%B0%E5%B7%A5%E7%A8%8B/vite.png&#34;
 	width=&#34;1789&#34;
 	height=&#34;1007&#34;
-	srcset=&#34;http://localhost:1313/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%BA%8C%E5%88%9B%E5%BB%BA%E6%96%B0%E5%B7%A5%E7%A8%8B/vite_hu1796a0c24ca5c7237892b6cd328f5ce8_105740_480x0_resize_box_3.png 480w, http://localhost:1313/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%BA%8C%E5%88%9B%E5%BB%BA%E6%96%B0%E5%B7%A5%E7%A8%8B/vite_hu1796a0c24ca5c7237892b6cd328f5ce8_105740_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;https://jiamin.site/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%BA%8C%E5%88%9B%E5%BB%BA%E6%96%B0%E5%B7%A5%E7%A8%8B/vite_hu1796a0c24ca5c7237892b6cd328f5ce8_105740_480x0_resize_box_3.png 480w, https://jiamin.site/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%BA%8C%E5%88%9B%E5%BB%BA%E6%96%B0%E5%B7%A5%E7%A8%8B/vite_hu1796a0c24ca5c7237892b6cd328f5ce8_105740_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;vite构建&#34;
@@ -4553,11 +4553,11 @@
         </item>
         <item>
         <title>Vue3快速入门教程：一、Vue3简介</title>
-        <link>http://localhost:1313/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%B8%80vue3%E7%AE%80%E4%BB%8B/</link>
+        <link>https://jiamin.site/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%B8%80vue3%E7%AE%80%E4%BB%8B/</link>
         <pubDate>Sat, 07 Oct 2023 11:25:12 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%B8%80vue3%E7%AE%80%E4%BB%8B/</guid>
-        <description>&lt;img src="http://localhost:1313/images/vue3.png" alt="Featured image of post Vue3快速入门教程：一、Vue3简介" /&gt;&lt;p&gt;2020年9月18日，&lt;code&gt;Vue.js&lt;/code&gt;发布版&lt;code&gt;3.0&lt;/code&gt;版本，代号：&lt;code&gt;One Piece&lt;/code&gt;&lt;/p&gt;
+        <guid>https://jiamin.site/p/vue3%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%E4%B8%80vue3%E7%AE%80%E4%BB%8B/</guid>
+        <description>&lt;img src="https://jiamin.site/images/vue3.png" alt="Featured image of post Vue3快速入门教程：一、Vue3简介" /&gt;&lt;p&gt;2020年9月18日，&lt;code&gt;Vue.js&lt;/code&gt;发布版&lt;code&gt;3.0&lt;/code&gt;版本，代号：&lt;code&gt;One Piece&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;经历了：&lt;a class=&#34;link&#34; href=&#34;https://github.com/vuejs/core/commits/main&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;4800+次提交&lt;/a&gt;、&lt;a class=&#34;link&#34; href=&#34;https://github.com/vuejs/rfcs/tree/master/active-rfcs&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;40+个RFC&lt;/a&gt;、&lt;a class=&#34;link&#34; href=&#34;https://github.com/vuejs/vue-next/pulls?q=is%3Apr&amp;#43;is%3Amerged&amp;#43;-author%3Aapp%2Fdependabot-preview&amp;#43;&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
