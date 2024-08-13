@@ -14,6 +14,8 @@
 <meta name="twitter:title" content="Vue3快速入门教程：五、Pinia">
 <meta name="twitter:description" content="准备一个效果 搭建 pinia 环境 第一步：npm install pinia 第二步：操作src/main.ts 1 2 3 4 5 6 7 8 9 10 11 12 13 import { createApp } from &#39;vue&#39; import App from &#39;./App.vue&#39; /* 引入createPinia，用于创建pinia */ import { createPinia } from &#39;pinia&#39; /* 创建pinia */ const pinia = createPinia() const app = createApp(App) /* 使用插件 */{} app.use(pinia) app.mount(&#39;#app&#39;) 此时开发者工具中已经有了pinia选项 存储+读取数据 Store是一个保存：状态、业务逻辑 的实体，每个组件都可以读取、写入它。 它有三个概念：state、getter、action，相当于组件中的： data、 computed 和 methods。 具体编码：src/store/count.ts 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 // 引入defineStore用于创建store import {defineStore} from &#39;pinia&#39; // 定义并暴露一个store export const useCountStore = defineStore(&#39;count&#39;,{ // 动作 actions:{}, // 状态 state(){ return { sum:6 } }, // 计算 getters:{} }) 具体编码：src/store/talk."><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://jiamin.site/images/vue3.png' />
+    <link rel="shortcut icon" href="/fav/favicon.ico" />
+
   
 
 

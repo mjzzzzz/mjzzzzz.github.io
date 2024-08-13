@@ -14,6 +14,8 @@
 <meta name="twitter:title" content="Vue3快速入门教程：四、路由">
 <meta name="twitter:description" content="对路由的理解 基本切换效果 Vue3中要使用vue-router的最新版本，目前是4版本。 路由配置文件代码如下： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 import {createRouter,createWebHistory} from &#39;vue-router&#39; import Home from &#39;@/pages/Home.vue&#39; import News from &#39;@/pages/News.vue&#39; import About from &#39;@/pages/About.vue&#39; const router = createRouter({ history:createWebHistory(), routes:[ { path:&#39;/home&#39;, component:Home }, { path:&#39;/about&#39;, component:About } ] }) export default router main.ts代码如下： 1 2 3 4 import router from &#39;./router/index&#39; app.use(router) app.mount(&#39;#app&#39;) App.vue代码如下"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://jiamin.site/images/vue3.png' />
+    <link rel="shortcut icon" href="/fav/favicon.ico" />
+
   
 
 

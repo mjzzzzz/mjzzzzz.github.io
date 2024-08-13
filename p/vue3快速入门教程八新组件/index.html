@@ -14,6 +14,8 @@
 <meta name="twitter:title" content="Vue3快速入门教程：八、新组件">
 <meta name="twitter:description" content="Teleport 什么是Teleport？—— Teleport 是一种能够将我们的组件html结构移动到指定位置的技术。 1 2 3 4 5 6 7 &lt;teleport to=&#39;body&#39; &gt; &lt;div class=&#34;modal&#34; v-show=&#34;isShow&#34;&gt; &lt;h2&gt;我是一个弹窗&lt;/h2&gt; &lt;p&gt;我是弹窗中的一些内容&lt;/p&gt; &lt;button @click=&#34;isShow = false&#34;&gt;关闭弹窗&lt;/button&gt; &lt;/div&gt; &lt;/teleport&gt; Suspense 等待异步组件时渲染一些额外内容，让应用有更好的用户体验 使用步骤： 异步引入组件 使用Suspense包裹组件，并配置好default 与 fallback 1 2 import { defineAsyncComponent,Suspense } from &#34;vue&#34;; const Child = defineAsyncComponent(()=&gt;import(&#39;./Child.vue&#39;)) 1 2 3 4 5 6 7 8 9 10 11 12 13 &lt;template&gt; &lt;div class=&#34;app&#34;&gt; &lt;h3&gt;我是App组件&lt;/h3&gt; &lt;Suspense&gt; &lt;template v-slot:default&gt; &lt;Child/&gt; &lt;/template&gt; &lt;template v-slot:fallback&gt; &lt;h3&gt;加载中.......&lt;/h3&gt; &lt;/template&gt; &lt;/Suspense&gt; &lt;/div&gt; &lt;/template&gt; 全局API转移到应用对象 app."><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://jiamin.site/images/vue3.png' />
+    <link rel="shortcut icon" href="/fav/favicon.ico" />
+
   
 
 

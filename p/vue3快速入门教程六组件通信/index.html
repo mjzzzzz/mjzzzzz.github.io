@@ -14,6 +14,8 @@
 <meta name="twitter:title" content="Vue3快速入门教程：六、组件通信">
 <meta name="twitter:description" content="Vue3组件通信和Vue2的区别： 移除事件总线，使用mitt代替。 vuex换成了pinia。 把.sync优化到了v-model里面了。 把$listeners所有的东西，合并到$attrs中了。 $children被砍掉了。 常见搭配形式： 6.1. props 概述：props是使用频率最高的一种通信方式，常用于：父 ↔ 子。 若 父传子：属性值是非函数。 若 子传父：属性值是函数。 父组件： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 &lt;template&gt; &lt;div class=&#34;father&#34;&gt; &lt;h3&gt;父组件，&lt;/h3&gt; &lt;h4&gt;我的车：{{ car }}&lt;/h4&gt; &lt;h4&gt;儿子给的玩具：{{ toy }}&lt;/h4&gt; &lt;Child :car=&#34;car&#34; :getToy=&#34;getToy&#34;/&gt; &lt;/div&gt; &lt;/template&gt; &lt;script setup lang=&#34;ts&#34; name=&#34;Father&#34;&gt; import Child from &#39;./Child.vue&#39; import { ref } from &#34;vue&#34;; // 数据 const car = ref(&#39;奔驰&#39;) const toy = ref() // 方法 function getToy(value:string){ toy."><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://jiamin.site/images/vue3.png' />
+    <link rel="shortcut icon" href="/fav/favicon.ico" />
+
   
 
 
